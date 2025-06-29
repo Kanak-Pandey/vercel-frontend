@@ -8,7 +8,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom"
 export function Signin(){
         const [username,setUsername]=useState("");
-        const [password,setPassword]=useState();
+        const [password,setPassword]=useState("");
         const navigate=useNavigate();
     return <div className="bg-slate-300 h-screen flex justify-center">
         <div className="flex flex-col justify-center">
@@ -23,15 +23,14 @@ export function Signin(){
                 }} placeholder="eg.xyz" label="Password"/>
                 <div className="pt-4">
                     
-                    <Button onClick={()=>{
-                        axios.post("http://localhost:3000/api/v1/user/signin",{
+                    <Button onClick={async ()=>{
+                        const response =await axios.post("https://vercel-backend-kanak-pandeys-projects.vercel.app/api/v1/user/signin",{
                             username,
                             password
-                        },{
-                            headers:{
-                                Authorization:"Bearer " + localStorage.getItem("token")
-                            }
                         })
+                        if(response.data.token){
+                            localStorage.setItem("token",response.data.token);
+                        }
                         navigate("/dashboard")
                     }} label={"Sign in"}/>
                     
