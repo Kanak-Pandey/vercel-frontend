@@ -9,7 +9,7 @@ export function Dashboard(){
     const [balance,setBalance]=useState("");
     useEffect(()=>{
         const token=localStorage.getItem("token");
-        axios.get("https://vercel-backend-kanak-pandeys-projects.vercel.app/api/v1/account/balance", {
+        axios.get("https://vercel-backend-kanak-pandeys-projects.vercel.app/api/v1/accounts/balance", {
             headers: {
                 Authorization: "Bearer " + token
             }
