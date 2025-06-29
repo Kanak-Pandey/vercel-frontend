@@ -3,7 +3,7 @@ import { AppBar } from "../components/AppBar";
 import { Balance } from "../components/Balance";
 import { Button } from "../components/Button";
 import { Users } from "../components/Users";
-
+import axios from "axios"
 
 export function Dashboard(){
     const [balance,setBalance]=useState("");
