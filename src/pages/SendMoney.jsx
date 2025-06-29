@@ -41,7 +41,7 @@ export function SendMoney(){
                     <button onClick={async ()=>{
 
 
-                        const response=await axios.post("https://vercel-backend-kanak-pandeys-projects.vercel.app//api/v1/accounts/transfer",{
+                        const response=await axios.post("https://vercel-backend-kanak-pandeys-projects.vercel.app/api/v1/accounts/transfer",{
 
                             to:id,
                             amount
