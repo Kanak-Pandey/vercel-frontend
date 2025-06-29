@@ -20,7 +20,7 @@ export function Dashboard(){
             console.error("Failed to fetch balance:", error);
             setBalance("0.00");
         });
-    },[balance])
+    },[])
     return <div>
         <AppBar/>
         <div className="m-8">
